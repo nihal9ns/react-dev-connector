@@ -6,6 +6,7 @@ const posts = require("./routes/api/posts");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const path = require("path");
+require("dotenv").config();
 
 const port = 5000;
 
