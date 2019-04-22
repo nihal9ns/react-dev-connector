@@ -6,12 +6,12 @@ A social network for developers who can connect with other developers around the
 
 ## App Structure
 
-/
--- client : All things frontend
--- config : Config files for prod and dev env, keys and passport config.
--- models : MongoDB models for collections.
--- routes : Consists of REST routes.
--- validation : Validation helper methods.
+    .
+    ├── client                   # All things frontend.
+    ├── config                   # Config files for prod and dev env, keys and passport config.
+    ├── models                   # MongoDB models for collections.
+    ├── routes                   # Consists of REST routes.
+    ├── validation               # Validation helper methods.
 
 ## Installing on local
 
