@@ -1,22 +1,21 @@
-var validator = require('validator');
-var isEmpty = require('./is-empty');
+var validator = require("validator");
+var isEmpty = require("./is-empty");
 
-module.exports = function validatePostInput(data){
+module.exports = function validatePostInput(data) {
+  var errors = {};
 
-	var errors = {};
+  data.text = !isEmpty(data.text) ? data.text : "";
 
-	data.text = !isEmpty(data.text) ? data.text : '';
+  if (!validator.isLength(data.text, { min: 10, max: 300 })) {
+    errors.text = "Text must be between 10 and 300 characters!";
+  }
 
-	if(!validator.isLength(data.text, {min: 10 , max: 300})){
-		errors.text = 'Text must be between 10 and 300 characters!';
-	}
+  if (validator.isEmpty(data.text)) {
+    errors.text = "Text field is required!";
+  }
 
-	if(validator.isEmpty(data.text)){
-		errors.text = 'Text field is required!'; 
-	}	
-
-	return {
-		errors,
-		isValid: isEmpty(errors)
-	}
-}
+  return {
+    errors,
+    isValid: isEmpty(errors)
+  };
+};

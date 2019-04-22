@@ -1,3 +1,3 @@
 module.exports = {
-	secretOrKey: 'this-is-some-random-secret-value'
+  secretOrKey: "this-is-some-random-secret-value"
 };
